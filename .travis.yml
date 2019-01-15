@@ -17,6 +17,10 @@ before_script:
 - psql -c "create database decide owner decide"
 - python manage.py migrate
 script: 
-- python manage.py test store
+- python manage.py test
 addons:
   postgresql: "9.6"
+deploy:
+  on:
+    branch: master
+    
